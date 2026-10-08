@@ -40,10 +40,8 @@
 			<polygon points="158 36, 161 42, 155 42" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
 			<path d="M 122,57 L 308,92 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
 			<polygon points="308 92, 302 95, 302 89" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
-			<text x="195.8" y="79.5" style="font-family: Helvetica; font-size: 6.4px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,159) scale(1,-1)">publica JSON</text>
 			<path d="M 122,53 L 428,82 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
 			<polygon points="428 82, 422 85, 422 79" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
-			<text x="262.2" y="72.5" style="font-family: Helvetica; font-size: 6.4px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,145) scale(1,-1)">atualiza</text>
 			<path d="M 267,77 L 267,58 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
 			<text x="271" y="63" style="font-family: Helvetica; font-size: 6.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,126) scale(1,-1)">chave MinIO</text>
 			<text x="287" y="10" style="font-family: Helvetica-Oblique; font-size: 6.7px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,20) scale(1,-1)">Historico MongoDB termina em 29/09/2026; MQTT nao persiste nele automaticamente.</text>

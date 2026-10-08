@@ -58,8 +58,6 @@
 			<polygon points="362 112, 355 108, 360 106" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1; fill: rgb(77%,58%,27%); fill-rule: evenodd;"/>
 			<path d="M 344,16 L 362,80 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.4;"/>
 			<polygon points="362 80, 355 77, 360 74" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1; fill: rgb(77%,58%,27%); fill-rule: evenodd;"/>
-			<text x="332" y="88" style="font-family: Helvetica; font-size: 6.1px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,176) scale(1,-1)">persistir</text>
-			<text x="337" y="64" style="font-family: Helvetica; font-size: 6.1px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,128) scale(1,-1)">atualizar</text>
 			<text x="354" y="8" style="font-family: Helvetica-Oblique; font-size: 6.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,16) scale(1,-1)">Porta publica do grupo: confirmar. Coletor sem porta publica.</text>
 		</g>
 	</g>

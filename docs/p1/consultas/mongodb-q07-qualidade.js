@@ -1,4 +1,4 @@
-// Q04: triagem de defeitos em leituras. Executar no MongoDB do Grupo 2.
+// Q07: triagem de defeitos em leituras. Executar no MongoDB do Grupo 2.
 // Somente leitura; os limiares sao criterios de triagem e precisam de validacao.
 const c = db.leituras;
 const duplicatas = c.aggregate([

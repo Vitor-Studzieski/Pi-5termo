@@ -88,8 +88,8 @@ def current_architecture():
     arrow(d, 122, 132, 158, 148)
     arrow(d, 122, 132, 158, 92)
     arrow(d, 122, 132, 158, 36)
-    arrow(d, 122, 57, 308, 92, "publica JSON")
-    arrow(d, 122, 53, 428, 82, "atualiza")
+    arrow(d, 122, 57, 308, 92)
+    arrow(d, 122, 53, 428, 82)
     d.add(Line(267, 77, 267, 58, strokeColor=GOLD, strokeWidth=1,
                strokeDashArray=[3, 2]))
     d.add(String(271, 63, "chave MinIO", fontName="Helvetica", fontSize=6.2, fillColor=MUTED))
@@ -123,8 +123,6 @@ def proposed_architecture():
     d.add(Polygon([362,112,355,108,360,106], fillColor=GOLD, strokeColor=GOLD))
     d.add(Line(344, 16, 362, 80, strokeColor=GOLD, strokeWidth=1.4))
     d.add(Polygon([362,80,355,77,360,74], fillColor=GOLD, strokeColor=GOLD))
-    d.add(String(332, 88, "persistir", fontName="Helvetica", fontSize=6.1, fillColor=MUTED))
-    d.add(String(337, 64, "atualizar", fontName="Helvetica", fontSize=6.1, fillColor=MUTED))
     d.add(String(354, 8, "Porta publica do grupo: confirmar. Coletor sem porta publica.",
                  fontName="Helvetica-Oblique", fontSize=6.5, fillColor=MUTED))
     return d
@@ -271,7 +269,7 @@ def make_styles():
     s.add(ParagraphStyle(name="Note", parent=s["BodyText"], fontName="Helvetica-Bold",
                          fontSize=8.1, leading=11, textColor=NAVY, backColor=SAGE,
                          borderColor=GREEN, borderWidth=.5, borderPadding=8,
-                         spaceBefore=6, spaceAfter=8))
+                         spaceBefore=14, spaceAfter=8))
     s.add(ParagraphStyle(name="CodeHead", parent=s["BodyText"], fontName="Helvetica-Bold",
                          fontSize=8.2, leading=10, textColor=GREEN, spaceBefore=6, spaceAfter=4,
                          keepWithNext=True))

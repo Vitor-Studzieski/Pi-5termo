@@ -4,7 +4,16 @@
 **Projeto Integrador de Arquiteturas Cloud para Big Data · Semestre 2026.2**
 **Versão de trabalho em 07/10/2026**
 
-> **Pendências para liberar a entrega:** nomes completos e RAs dos integrantes; resultados com data/hora das consultas Q01-Q06 nos serviços reais do Grupo 2; revisão final da divisão de tarefas e da porta pública atribuída ao grupo. Este documento não preenche contagens nem defeitos por estimativa.
+**Integrantes**
+
+- Vitor Studzieski · RA 2591262422005
+- Maria Fernanda Passos Françoso · RA 2591262422006
+- Lauan Alves · RA 2591262422018
+- Luan Martinhão · RA 2591262422017
+
+**Repositório:** [Pi-5termo](https://github.com/Vitor-Studzieski/Pi-5termo)
+
+> **Pendências para liberar a entrega:** resultados com data/hora das consultas Q01-Q06 nos serviços reais do Grupo 2; contagens de qualidade da consulta Q07; confirmação da porta pública atribuída ao grupo e validação da divisão de tarefas pela equipe. Este documento não preenche contagens nem defeitos por estimativa.
 
 ## 1. Grupo e fazenda
 
@@ -101,6 +110,17 @@ for obj in s3.list_objects_v2(Bucket="grupo2").get("Contents", []):
     print(obj["Key"], obj["Size"], obj["LastModified"])
 ```
 
+**Q07 - MongoDB, triagem de qualidade** (`mongodb-q07-qualidade.js`): a consulta completa mede duplicatas, lacunas, percentuais fora da faixa, sequências repetidas, distribuição por firmware e documentos fora da ordem natural. Exemplo da regra de duplicidade:
+
+```javascript
+db.leituras.aggregate([
+  { $group: { _id: { sensor: "$sensor", ts: "$ts" }, n: { $sum: 1 } } },
+  { $match: { n: { $gt: 1 } } },
+  { $group: { _id: null, chaves_duplicadas: { $sum: 1 },
+    linhas_excedentes: { $sum: { $subtract: ["$n", 1] } } } }
+])
+```
+
 | Consulta | Execução (horário de São Paulo) | Resultado observado | Interpretação |
 |---|---|---|---|
 | Q01 | PENDENTE | PENDENTE | Sem execução autenticada; não inferir distribuição por tabela a partir do total agregado publicado. |
@@ -109,19 +129,20 @@ for obj in s3.list_objects_v2(Bucket="grupo2").get("Contents", []):
 | Q04 | PENDENTE | PENDENTE | Redis representa estado recente e uma janela curta, não substitui o histórico. |
 | Q05 | PENDENTE | PENDENTE | Uma amostra do broker é transitória e não mede cobertura histórica. |
 | Q06 | PENDENTE | PENDENTE | Registrar total de objetos/bytes e conferir se as chaves esperadas abrem. |
+| Q07 | PENDENTE | PENDENTE | Registrar cada defeito separadamente; limiares de lacuna e repetição são critérios de triagem. |
 
 ## 3. Qualidade dos dados
 
-A documentação do conjunto informa que foram incluídos exemplos de duplicatas, intervalos sem leitura, valores impossíveis, sensores repetindo valores, alterações de unidade após mudança de firmware e documentos fora da ordem temporal. A documentação não localiza os casos em cada fazenda. A tabela abaixo registra como o grupo vai detectá-los e tratá-los; as quantidades da Fazenda Boa Vista são PENDENTES até executar Q04.
+A documentação do conjunto informa que foram incluídos exemplos de duplicatas, intervalos sem leitura, valores impossíveis, sensores repetindo valores, alterações de unidade após mudança de firmware e documentos fora da ordem temporal. A documentação não localiza os casos em cada fazenda. A tabela abaixo registra como o grupo vai detectá-los e tratá-los; as quantidades da Fazenda Boa Vista são PENDENTES até executar Q07.
 
 | Problema e detecção | Quantidade afetada | Tratamento planejado |
 |---|---|---|
-| Duplicata: mesma chave lógica `(sensor, ts)` no MongoDB. Q04 agrupa a chave e conta linhas excedentes. | PENDENTE Q04 | Deduplicar idempotentemente pela chave lógica ao ingerir; não contar duplicatas em médias. Manter trilha de auditoria. |
-| Lacuna: intervalo entre duas leituras do mesmo sensor acima da cadência nominal histórica de 15 min. Q04 ordena por `ts` UTC e estima slots ausentes. | PENDENTE Q04 | Mostrar lacuna e intervalo sem dado; não interpolar silenciosamente. |
-| Percentual impossível: umidade percentual ou bateria menor que 0 ou maior que 100. Q04 filtra os campos. | PENDENTE Q04 | Excluir da agregação e dos alertas numéricos; preservar o valor bruto com indicador de qualidade. |
-| Sensor possivelmente travado: oito ou mais valores consecutivos iguais no mesmo sensor. Q04 faz triagem com base na cadência de 15 min. | PENDENTE Q04 | Sinalizar para análise; confirmar com status e firmware antes de excluir. O limiar é triagem, não prova de defeito. |
-| Unidade/firmware: distribuição de versão e escala dos valores por sensor/período. Q03/Q04 comparam firmware e campos numéricos. | PENDENTE Q03/Q04 | Converter para unidade canônica somente após confirmar a mudança; guardar unidade original e regra de conversão. |
-| Ordem de chegada distinta da ordem do evento: comparar sequência natural e `ts`. | PENDENTE Q04 | Ordenar por hora do evento, aceitar atrasos e tornar a gravação idempotente. |
+| Duplicata: mesma chave lógica `(sensor, ts)` no MongoDB. Q07 agrupa a chave e conta linhas excedentes. | PENDENTE Q07 | Deduplicar idempotentemente pela chave lógica ao ingerir; não contar duplicatas em médias. Manter trilha de auditoria. |
+| Lacuna: intervalo entre duas leituras do mesmo sensor acima da cadência nominal histórica de 15 min. Q07 ordena por `ts` UTC e estima slots ausentes. | PENDENTE Q07 | Mostrar lacuna e intervalo sem dado; não interpolar silenciosamente. |
+| Percentual impossível: umidade percentual ou bateria menor que 0 ou maior que 100. Q07 filtra os campos. | PENDENTE Q07 | Excluir da agregação e dos alertas numéricos; preservar o valor bruto com indicador de qualidade. |
+| Sensor possivelmente travado: oito ou mais valores consecutivos iguais no mesmo sensor. Q07 faz triagem com base na cadência de 15 min. | PENDENTE Q07 | Sinalizar para análise; confirmar com status e firmware antes de excluir. O limiar é triagem, não prova de defeito. |
+| Unidade/firmware: distribuição de versão e escala dos valores por sensor/período. Q03/Q07 comparam firmware e campos numéricos. | PENDENTE Q03/Q07 | Converter para unidade canônica somente após confirmar a mudança; guardar unidade original e regra de conversão. |
+| Ordem de chegada distinta da ordem do evento: comparar sequência natural e `ts`. | PENDENTE Q07 | Ordenar por hora do evento, aceitar atrasos e tornar a gravação idempotente. |
 | Telemetria sem operação associada: comparar `operacao_id` MongoDB com `operacao.id` MariaDB. | PENDENTE após consultas | Exibir com aviso e deixar fora de métricas por operação até revisar a referência. |
 
 Os limiares de triagem serão revistos com o cadastro e o firmware do sensor. O sistema manterá visível a diferença entre “sem leitura” e “leitura válida sem alteração”. Nenhuma limpeza será aplicada diretamente ao conjunto compartilhado da disciplina.

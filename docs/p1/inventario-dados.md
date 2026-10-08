@@ -4,6 +4,8 @@
 
 Os numeros abaixo sao resultados a coletar dos servicos autenticados do Grupo 2. A pagina publica da disciplina informa como referencia de consistencia 81.155 leituras de sensores, 9.200 pontos de GPS e 506 linhas SQL para o Grupo 2; esses totais publicados nao substituem as consultas executadas pelo grupo nem identificam a distribuicao por tabela/colecao.
 
+A consulta Q07 (`consultas/mongodb-q07-qualidade.js`) mede separadamente os defeitos descritos em `qualidade-dados.md`; ela complementa o inventario e nao substitui as seis consultas por servico.
+
 | Servico | Conteudo esperado | Quantidade e periodo medidos | Pergunta de negocio | Consulta |
 |---|---|---|---|---|
 | MariaDB `grupo2` | Cadastro da fazenda, seis talhoes, culturas, safras, sensores, maquinas, funcionarios, insumos, operacoes, estoque, clientes e vendas | A preencher com Q01 e Q02; janela por coluna de data observada | Qual o custo por operacao/talhao/safra e qual produtividade foi registrada? | `consultas/mariadb-q01-inventario.sql`, `mariadb-q02-operacoes.sql` |
