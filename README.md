@@ -5,7 +5,10 @@ Sistema web de acompanhamento da Fazenda Boa Vista, em Garça/SP, para apoiar a 
 ## Grupo
 
 - Fazenda: Fazenda Boa Vista, café arábica, 255 ha e seis talhões.
-- Integrantes e RAs: pendente de confirmação pelo grupo.
+- Vitor Studzieski, RA 2591262422005 ([GitHub](https://github.com/Vitor-Studzieski))
+- Maria Fernanda Passos Françoso, RA 2591262422006 ([GitHub](https://github.com/MaferPassos))
+- Lauan Alves, RA 2591262422018 ([GitHub](https://github.com/lauan2004))
+- Luan Martinhão, RA 2591262422017 ([GitHub](https://github.com/luanm4rtinhao))
 - Repositório remoto: https://github.com/Vitor-Studzieski/Pi-5termo
 
 ## Escopo da P1
@@ -29,4 +32,4 @@ Copie `.env.example` para `.env` e preencha localmente com a folha de acessos do
 
 ## Estado da entrega
 
-O PDF em `docs/p1/P1_IAL214_Grupo2.pdf` é uma versão de trabalho até que o grupo informe nomes e RAs, execute as consultas nos serviços e confirme a divisão de tarefas e a porta pública. Resultados sem execução real não devem ser preenchidos por estimativa.
+O PDF em `docs/p1/P1_IAL214_Grupo2.pdf` é uma versão de trabalho até que o grupo execute as consultas nos serviços e confirme a divisão de tarefas e a porta pública. Resultados sem execução real não devem ser preenchidos por estimativa.

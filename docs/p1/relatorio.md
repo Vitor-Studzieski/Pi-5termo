@@ -8,14 +8,17 @@
 
 ## 1. Grupo e fazenda
 
-| Campo | Informação |
-|---|---|
-| Grupo | Grupo 2 |
-| Fazenda | Fazenda Boa Vista, Garça/SP |
-| Atividade agrícola | Café arábica |
-| Área divulgada | 255 ha, em seis talhões |
-| Integrantes | PENDENTE: nome completo e RA de cada integrante |
-| Repositório GitHub | [github.com/Vitor-Studzieski/Pi-5termo](https://github.com/Vitor-Studzieski/Pi-5termo) |
+| Campo | Identificação | Perfil |
+|---|---|---|
+| Grupo | Grupo 2 | - |
+| Fazenda | Fazenda Boa Vista, Garça/SP | - |
+| Atividade agrícola | Café arábica | - |
+| Área divulgada | 255 ha, em seis talhões | - |
+| Integrante 1 | Vitor Studzieski · RA 2591262422005 | [Vitor-Studzieski](https://github.com/Vitor-Studzieski) |
+| Integrante 2 | Maria Fernanda Passos Françoso · RA 2591262422006 | [MaferPassos](https://github.com/MaferPassos) |
+| Integrante 3 | Lauan Alves · RA 2591262422018 | [lauan2004](https://github.com/lauan2004) |
+| Integrante 4 | Luan Martinhão · RA 2591262422017 | [luanm4rtinhao](https://github.com/luanm4rtinhao) |
+| Repositório do projeto | [Pi-5termo](https://github.com/Vitor-Studzieski/Pi-5termo) | GitHub |
 
 O projeto propõe um painel web para apoiar o gerente da Fazenda Boa Vista no acompanhamento de sensores, alertas, operações, custos e imagens NDVI. A P1 documenta os dados disponíveis e delimita a solução a ser implementada até a P2 de 17/11/2026. O conjunto didático é sintético e cobre o período histórico de 01/06/2026 a 29/09/2026; o broker MQTT continua publicando dados ao vivo.
 
@@ -213,14 +216,14 @@ Credenciais entram como variáveis de ambiente no deploy pelo painel de containe
 
 ### Divisão de tarefas
 
-| Integrante | Responsabilidade proposta | Confirmação |
-|---|---|---|
-| Integrante 1 - PENDENTE: nome/RA | Coordenação, consultas MariaDB, dados de custo e produtividade | PENDENTE |
-| Integrante 2 - PENDENTE: nome/RA | Consultas MongoDB, análise de qualidade e adaptador histórico | PENDENTE |
-| Integrante 3 - PENDENTE: nome/RA | Wireframes/UI e consultas Redis/MQTT | PENDENTE |
-| Integrante 4 - PENDENTE: nome/RA | Containerização, MinIO, deploy e operação | PENDENTE |
+| Integrante | Responsabilidade planejada |
+|---|---|
+| Vitor Studzieski · RA 2591262422005 | Coordenação, consultas MariaDB, custos/produtividade e integração das telas. |
+| Maria Fernanda Passos Françoso · RA 2591262422006 | Consultas MongoDB, análise de qualidade e adaptador histórico. |
+| Lauan Alves · RA 2591262422018 | Interface e wireframes, consultas Redis/MQTT e apresentação do estado recente. |
+| Luan Martinhão · RA 2591262422017 | Containers, MinIO, deploy e documentação de operação/evidências. |
 
-As atribuições são uma proposta inicial, não uma ata de acordo. O grupo deve associar as tarefas às pessoas e revisar a carga antes da implementação. A arquitetura editável está em `arquitetura/proposta.mmd`; a decisão e suas consequências estão em `../decisoes/ADR-001-arquitetura.md`.
+Essa distribuição é o plano de trabalho sugerido para a equipe e deve ser validada pelo grupo antes da implementação. A arquitetura editável está em `arquitetura/proposta.mmd`; a decisão e suas consequências estão em `../decisoes/ADR-001-arquitetura.md`.
 
 ### Referências
 
