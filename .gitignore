@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+*.log
+*.sql.gz
+*.dump
+__pycache__/
+.DS_Store
+node_modules/
+dist/
+build/
+tmp/

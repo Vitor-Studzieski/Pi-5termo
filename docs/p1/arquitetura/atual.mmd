@@ -1,0 +1,10 @@
+flowchart LR
+    H["Carga do historico\n01/06 a 29/09/2026"]
+    S["Sensores e maquinas\n(simulador ao vivo)"]
+    H --> MDB[("MariaDB grupo2\ncadastros e operacoes")]
+    H --> MGO[("MongoDB grupo2\nleituras, telemetria, alertas, imagens")]
+    H --> OBJ[("MinIO bucket grupo2\nNDVI e laudo de solo")]
+    S -->|"JSON por topico"| MQTT{{"Broker MQTT\nfazenda/grupo2/#"}}
+    S -->|"atualizacao do estado"| REDIS[("Redis grupo2:*\nultimo valor, stream curto, alertas")]
+    MQTT -->|"publicacao ao vivo"| SUB["Assinantes do grupo"]
+    MGO -.->|"metadados e chave"| OBJ

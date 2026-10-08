@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="520" height="300" preserveAspectRatio="xMinYMin meet" viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="520" height="300"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-300)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="1" y="1" width="518" height="298" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="1" y="257" width="518" height="42" style="stroke: rgb(9%,23%,19%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,23%,19%); fill-rule: evenodd;"/>
+			<text x="16" y="281" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,562) scale(1,-1)">BOA VISTA | PAINEL DE CAMPO</text>
+			<text x="16" y="266" style="font-family: Helvetica; font-size: 8px;fill: rgb(86%,91%,87%); stroke:none;" transform="translate(0,532) scale(1,-1)">NDVI e solo</text>
+			<rect x="1" y="1" width="90" height="256" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="16" y="225" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,450) scale(1,-1)">Visao geral</text>
+			<text x="16" y="193" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,386) scale(1,-1)">Talhoes</text>
+			<text x="16" y="161" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,322) scale(1,-1)">Operacoes</text>
+			<rect x="9" y="122" width="75" height="22" style="stroke: rgb(90%,94%,91%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,94%,91%); fill-rule: evenodd;"/>
+			<text x="16" y="129" style="font-family: Helvetica-Bold; font-size: 7.5px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,258) scale(1,-1)">NDVI e solo</text>
+			<text x="106" y="235" style="font-family: Helvetica-Bold; font-size: 11px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,470) scale(1,-1)">Imagens e analise de solo</text>
+			<text x="106" y="220" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,440) scale(1,-1)">Fazenda Boa Vista  |  atualizado em --/--/---- --:-- BRT</text>
+			<rect x="106" y="187" width="397" height="28" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="117" y="198" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,396) scale(1,-1)">Talhao [T03 v]     Data da imagem [--/--/---- v]     Cobertura de nuvem: --%</text>
+			<rect x="106" y="60" width="190" height="111" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="117" y="157" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,314) scale(1,-1)">Mapa NDVI - imagem MinIO</text>
+			<rect x="124" y="78" width="154" height="66" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,90%,83%); fill-rule: evenodd;"/>
+			<polygon points="130 84, 180 82, 194 96, 186 111, 165 115, 153 138, 135 130" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(47%,65%,39%); fill-rule: evenodd;"/>
+			<polygon points="194 96, 216 85, 268 90, 270 123, 238 136, 186 111" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(81%,60%,34%); fill-rule: evenodd;"/>
+			<rect x="309" y="60" width="194" height="111" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="320" y="157" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,314) scale(1,-1)">Analise de solo - laudo CSV</text>
+			<text x="320" y="137" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,274) scale(1,-1)">pH</text>
+			<text x="440" y="137" style="font-family: Helvetica-Bold; font-size: 7px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,274) scale(1,-1)">--</text>
+			<text x="320" y="120" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,240) scale(1,-1)">Materia organica</text>
+			<text x="440" y="120" style="font-family: Helvetica-Bold; font-size: 7px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,240) scale(1,-1)">--</text>
+			<text x="320" y="103" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,206) scale(1,-1)">Fosforo (P)</text>
+			<text x="440" y="103" style="font-family: Helvetica-Bold; font-size: 7px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,206) scale(1,-1)">--</text>
+			<text x="320" y="86" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,172) scale(1,-1)">Potassio (K)</text>
+			<text x="440" y="86" style="font-family: Helvetica-Bold; font-size: 7px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,172) scale(1,-1)">--</text>
+			<text x="106" y="43" style="font-family: Helvetica-Oblique; font-size: 6.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,86) scale(1,-1)">Catalogo e NDVI medio: MongoDB imagens. Binario do mapa e laudo: MinIO.</text>
+		</g>
+	</g>
+</svg>

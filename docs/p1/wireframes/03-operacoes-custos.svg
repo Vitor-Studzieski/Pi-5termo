@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="520" height="300" preserveAspectRatio="xMinYMin meet" viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="520" height="300"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-300)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="1" y="1" width="518" height="298" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="1" y="257" width="518" height="42" style="stroke: rgb(9%,23%,19%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,23%,19%); fill-rule: evenodd;"/>
+			<text x="16" y="281" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,562) scale(1,-1)">BOA VISTA | PAINEL DE CAMPO</text>
+			<text x="16" y="266" style="font-family: Helvetica; font-size: 8px;fill: rgb(86%,91%,87%); stroke:none;" transform="translate(0,532) scale(1,-1)">Operacoes</text>
+			<rect x="1" y="1" width="90" height="256" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="16" y="225" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,450) scale(1,-1)">Visao geral</text>
+			<text x="16" y="193" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,386) scale(1,-1)">Talhoes</text>
+			<rect x="9" y="154" width="75" height="22" style="stroke: rgb(90%,94%,91%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,94%,91%); fill-rule: evenodd;"/>
+			<text x="16" y="161" style="font-family: Helvetica-Bold; font-size: 7.5px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,322) scale(1,-1)">Operacoes</text>
+			<text x="16" y="129" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,258) scale(1,-1)">NDVI e solo</text>
+			<text x="106" y="235" style="font-family: Helvetica-Bold; font-size: 11px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,470) scale(1,-1)">Operacoes e custos</text>
+			<text x="106" y="220" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,440) scale(1,-1)">Fazenda Boa Vista  |  atualizado em --/--/---- --:-- BRT</text>
+			<rect x="106" y="187" width="397" height="28" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="117" y="198" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,396) scale(1,-1)">Safra [2025/26 v]     Talhao [todos v]     Periodo [01/06 - 29/09]</text>
+			<rect x="106" y="70" width="397" height="105" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="107" y="151" width="395" height="23" style="stroke: rgb(90%,94%,91%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,94%,91%); fill-rule: evenodd;"/>
+			<text x="116" y="159" style="font-family: Helvetica-Bold; font-size: 6.8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,318) scale(1,-1)">Operacao</text>
+			<text x="231" y="159" style="font-family: Helvetica-Bold; font-size: 6.8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,318) scale(1,-1)">Qtd.</text>
+			<text x="286" y="159" style="font-family: Helvetica-Bold; font-size: 6.8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,318) scale(1,-1)">Custo total</text>
+			<text x="365" y="159" style="font-family: Helvetica-Bold; font-size: 6.8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,318) scale(1,-1)">Talhao</text>
+			<text x="431" y="159" style="font-family: Helvetica-Bold; font-size: 6.8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,318) scale(1,-1)">Periodo</text>
+			<path d="M 107,126 L 502,126 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="116" y="133" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,266) scale(1,-1)">Adubacao</text>
+			<text x="231" y="133" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,266) scale(1,-1)">--</text>
+			<text x="286" y="133" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,266) scale(1,-1)">R$ --</text>
+			<text x="365" y="133" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,266) scale(1,-1)">T01-T06</text>
+			<text x="431" y="133" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,266) scale(1,-1)">--</text>
+			<path d="M 107,104 L 502,104 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="116" y="111" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,222) scale(1,-1)">Pulverizacao</text>
+			<text x="231" y="111" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,222) scale(1,-1)">--</text>
+			<text x="286" y="111" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,222) scale(1,-1)">R$ --</text>
+			<text x="365" y="111" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,222) scale(1,-1)">T01-T06</text>
+			<text x="431" y="111" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,222) scale(1,-1)">--</text>
+			<path d="M 107,82 L 502,82 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="116" y="89" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,178) scale(1,-1)">Colheita</text>
+			<text x="231" y="89" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,178) scale(1,-1)">--</text>
+			<text x="286" y="89" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,178) scale(1,-1)">R$ --</text>
+			<text x="365" y="89" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,178) scale(1,-1)">T02/T03</text>
+			<text x="431" y="89" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,178) scale(1,-1)">--</text>
+			<text x="106" y="51" style="font-family: Helvetica-Oblique; font-size: 6.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,102) scale(1,-1)">Origem: MariaDB operacao + safra + talhao; telemetria de maquina opcional via MongoDB.</text>
+		</g>
+	</g>
+</svg>

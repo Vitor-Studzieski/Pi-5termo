@@ -1,0 +1,15 @@
+# Q04: estado recente do Grupo 2. Execute redis-cli com a URI local, sem colocar
+# senha na linha de comando/historico do shell. Todos os comandos abaixo leem.
+
+# Inventario completo de chaves (redis-cli, percorre todos os cursores):
+redis-cli --scan --pattern 'grupo2:*'
+TYPE grupo2:sensor:SS-01
+HGETALL grupo2:sensor:SS-01
+XREVRANGE grupo2:stream:leituras + - COUNT 5
+LRANGE grupo2:alertas:recentes 0 9
+ZREVRANGE grupo2:ranking:produtividade:2025-26 0 -1 WITHSCORES
+GET grupo2:contador:leituras_historicas
+GET grupo2:contador:leituras_ao_vivo
+
+# Registrar total de chaves, tipo/tamanho de cada estrutura, instante da consulta
+# e limites dos streams/listas. Redis representa janela recente, nao a serie completa.

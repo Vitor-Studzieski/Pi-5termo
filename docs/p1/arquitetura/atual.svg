@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="520" height="194" preserveAspectRatio="xMinYMin meet" viewBox="0 0 520 194" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="520" height="194"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-194)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="10" y="177" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,354) scale(1,-1)">FLUXO ATUAL DOS DADOS DO GRUPO 2</text>
+			<rect x="10" y="111" width="112" height="43" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(90%,94%,91%); fill-rule: evenodd;"/>
+			<text x="18" y="138" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,276) scale(1,-1)">Carga historica</text>
+			<text x="18" y="125.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,250) scale(1,-1)">cadastros, leituras, arquivos</text>
+			<rect x="10" y="36" width="112" height="43" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="18" y="63" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,126) scale(1,-1)">Simulador ao vivo</text>
+			<text x="18" y="50.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,100) scale(1,-1)">sensores e maquinas</text>
+			<rect x="164" y="127" width="104" height="42" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="172" y="153" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,306) scale(1,-1)">MariaDB</text>
+			<text x="172" y="140.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,280) scale(1,-1)">cadastro e operacoes</text>
+			<rect x="164" y="71" width="104" height="42" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="172" y="97" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,194) scale(1,-1)">MongoDB</text>
+			<text x="172" y="84.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,168) scale(1,-1)">leituras e telemetria</text>
+			<rect x="164" y="15" width="104" height="42" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="172" y="41" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,82) scale(1,-1)">MinIO</text>
+			<text x="172" y="28.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,56) scale(1,-1)">NDVI e laudo de solo</text>
+			<rect x="314" y="71" width="98" height="42" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(90%,94%,91%); fill-rule: evenodd;"/>
+			<text x="322" y="97" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,194) scale(1,-1)">Broker MQTT</text>
+			<text x="322" y="84.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,168) scale(1,-1)">topicos do grupo</text>
+			<rect x="433" y="71" width="78" height="42" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="441" y="97" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,194) scale(1,-1)">Redis</text>
+			<text x="441" y="84.0" style="font-family: Helvetica; font-size: 7.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,168) scale(1,-1)">estado recente</text>
+			<path d="M 122,132 L 158,148 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="158 148, 152 151, 152 145" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
+			<path d="M 122,132 L 158,92 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="158 92, 161 98, 155 98" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
+			<path d="M 122,132 L 158,36 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="158 36, 161 42, 155 42" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
+			<path d="M 122,57 L 308,92 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="308 92, 302 95, 302 89" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
+			<text x="195.8" y="79.5" style="font-family: Helvetica; font-size: 6.4px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,159) scale(1,-1)">publica JSON</text>
+			<path d="M 122,53 L 428,82 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="428 82, 422 85, 422 79" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1; fill: rgb(24%,44%,34%); fill-rule: evenodd;"/>
+			<text x="262.2" y="72.5" style="font-family: Helvetica; font-size: 6.4px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,145) scale(1,-1)">atualiza</text>
+			<path d="M 267,77 L 267,58 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<text x="271" y="63" style="font-family: Helvetica; font-size: 6.2px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,126) scale(1,-1)">chave MinIO</text>
+			<text x="287" y="10" style="font-family: Helvetica-Oblique; font-size: 6.7px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,20) scale(1,-1)">Historico MongoDB termina em 29/09/2026; MQTT nao persiste nele automaticamente.</text>
+		</g>
+	</g>
+</svg>

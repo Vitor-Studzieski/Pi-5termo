@@ -1,0 +1,11 @@
+flowchart LR
+    U["Gerente da fazenda"] --> WEB["Container web\nmonolito modular\nporta interna 8000"]
+    WEB -->|"cadastros e custos"| MDB[("MariaDB grupo2")]
+    WEB -->|"historico e alertas"| MGO[("MongoDB grupo2")]
+    WEB -->|"estado recente"| REDIS[("Redis grupo2:*")]
+    WEB -->|"buscar imagem/laudo"| OBJ[("MinIO bucket grupo2")]
+    SIM["Sensores e maquinas"] --> MQTT{{"Broker MQTT"}}
+    MQTT -->|"fazenda/grupo2/#"| COL["Container mqtt-coletor\nvalidar, deduplicar, persistir"]
+    COL -->|"novas leituras"| MGO
+    COL -->|"ultimo estado e stream"| REDIS
+    MGO -.->|"chave do objeto"| OBJ

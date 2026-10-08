@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="520" height="300" preserveAspectRatio="xMinYMin meet" viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="520" height="300"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-300)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="1" y="1" width="518" height="298" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="1" y="257" width="518" height="42" style="stroke: rgb(9%,23%,19%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,23%,19%); fill-rule: evenodd;"/>
+			<text x="16" y="281" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,562) scale(1,-1)">BOA VISTA | PAINEL DE CAMPO</text>
+			<text x="16" y="266" style="font-family: Helvetica; font-size: 8px;fill: rgb(86%,91%,87%); stroke:none;" transform="translate(0,532) scale(1,-1)">Talhoes</text>
+			<rect x="1" y="1" width="90" height="256" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="16" y="225" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,450) scale(1,-1)">Visao geral</text>
+			<rect x="9" y="186" width="75" height="22" style="stroke: rgb(90%,94%,91%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,94%,91%); fill-rule: evenodd;"/>
+			<text x="16" y="193" style="font-family: Helvetica-Bold; font-size: 7.5px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,386) scale(1,-1)">Talhoes</text>
+			<text x="16" y="161" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,322) scale(1,-1)">Operacoes</text>
+			<text x="16" y="129" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,258) scale(1,-1)">NDVI e solo</text>
+			<text x="106" y="235" style="font-family: Helvetica-Bold; font-size: 11px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,470) scale(1,-1)">Talhao T03 e sensores</text>
+			<text x="106" y="220" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,440) scale(1,-1)">Fazenda Boa Vista  |  atualizado em --/--/---- --:-- BRT</text>
+			<rect x="106" y="187" width="397" height="28" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,95%); fill-rule: evenodd;"/>
+			<text x="117" y="198" style="font-family: Helvetica; font-size: 7px;fill: rgb(12%,16%,14%); stroke:none;" transform="translate(0,396) scale(1,-1)">Talhao [T03 v]    Periodo [ultimos 7 dias v]    Sensor [SS-03 v]</text>
+			<rect x="106" y="70" width="397" height="105" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="117" y="160" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,23%,19%); stroke:none;" transform="translate(0,320) scale(1,-1)">Umidade do solo por profundidade (%)</text>
+			<path d="M 128,92 L 486,92 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.45;"/>
+			<path d="M 128,107 L 486,107 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.45;"/>
+			<path d="M 128,122 L 486,122 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.45;"/>
+			<path d="M 128,137 L 486,137 Z" style="stroke: rgb(83%,87%,84%); stroke-linecap: butt; stroke-width: 0.45;"/>
+			<path d="M 130,103 L 177,111 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 177,111 L 221,107 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 221,107 L 268,128 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 268,128 L 313,122 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 313,122 L 360,140 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 360,140 L 408,130 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 408,130 L 482,146 Z" style="stroke: rgb(24%,44%,34%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 130,94 L 177,100 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 177,100 L 221,99 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 221,99 L 268,112 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 268,112 L 313,108 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 313,108 L 360,122 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 360,122 L 408,119 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 408,119 L 482,129 Z" style="stroke: rgb(77%,58%,27%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<text x="117" y="52" style="font-family: Helvetica; font-size: 6.8px;fill: rgb(39%,45%,41%); stroke:none;" transform="translate(0,104) scale(1,-1)">Qualidade: duplicatas -- | intervalos sem leitura -- | firmware -- | ultima leitura --</text>
+		</g>
+	</g>
+</svg>
