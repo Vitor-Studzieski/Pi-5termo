@@ -9,7 +9,16 @@ Sistema web de acompanhamento da Fazenda Boa Vista, em Garça/SP, para apoiar a 
 - Maria Fernanda Passos Françoso, RA 2591262422006 ([GitHub](https://github.com/MaferPassos))
 - Lauan Alves, RA 2591262422018 ([GitHub](https://github.com/lauan2004))
 - Luan Martinhão, RA 2591262422017 ([GitHub](https://github.com/luanm4rtinhao))
+- Simplicio José, RA 2591262422020 ([GitHub](https://github.com/S1mplicio-Jose))
 - Repositório remoto: https://github.com/Vitor-Studzieski/Pi-5termo
+
+### Responsabilidades planejadas
+
+- Vitor: coordenação, consultas MariaDB, custos/produtividade e integração das telas.
+- Maria Fernanda: consultas MongoDB históricas e adaptador histórico.
+- Lauan: interface, wireframes, Redis/MQTT e estado recente.
+- Luan: containers, MinIO, deploy e documentação operacional.
+- Simplicio: validação integrada das consultas, indicadores de qualidade e evidências para a P2.
 
 ## Escopo da P1
 

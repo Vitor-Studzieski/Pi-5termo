@@ -10,6 +10,7 @@
 - Maria Fernanda Passos Françoso · RA 2591262422006
 - Lauan Alves · RA 2591262422018
 - Luan Martinhão · RA 2591262422017
+- Simplicio José · RA 2591262422020
 
 **Repositório:** [Pi-5termo](https://github.com/Vitor-Studzieski/Pi-5termo)
 
@@ -27,6 +28,7 @@
 | Integrante 2 | Maria Fernanda Passos Françoso · RA 2591262422006 | [MaferPassos](https://github.com/MaferPassos) |
 | Integrante 3 | Lauan Alves · RA 2591262422018 | [lauan2004](https://github.com/lauan2004) |
 | Integrante 4 | Luan Martinhão · RA 2591262422017 | [luanm4rtinhao](https://github.com/luanm4rtinhao) |
+| Integrante 5 | Simplicio José · RA 2591262422020 | [S1mplicio-Jose](https://github.com/S1mplicio-Jose) |
 | Repositório do projeto | [Pi-5termo](https://github.com/Vitor-Studzieski/Pi-5termo) | GitHub |
 
 O projeto propõe um painel web para apoiar o gerente da Fazenda Boa Vista no acompanhamento de sensores, alertas, operações, custos e imagens NDVI. A P1 documenta os dados disponíveis e delimita a solução a ser implementada até a P2 de 17/11/2026. O conjunto didático é sintético e cobre o período histórico de 01/06/2026 a 29/09/2026; o broker MQTT continua publicando dados ao vivo.
@@ -207,7 +209,7 @@ Os traçados e valores de exemplo nos wireframes são ilustrativos e não repres
 
 ### Decisão de arquitetura
 
-Propomos um **monólito web modular**, acompanhado por um **container coletor MQTT** pequeno e independente. Com quatro integrantes e seis semanas até a P2, o monólito reduz o custo de deploy e de integração das telas; módulos internos isolam domínio, consultas e adaptadores. O coletor fica separado porque tem ciclo contínuo de consumo, reconexão e gravação, diferente do ciclo de requisição da interface. Essa divisão evita decompor cada função de tela em um serviço próprio.
+Propomos um **monólito web modular**, acompanhado por um **container coletor MQTT** pequeno e independente. Com cinco integrantes e seis semanas até a P2, o monólito reduz o custo de deploy e de integração das telas; módulos internos isolam domínio, consultas e adaptadores. O coletor fica separado porque tem ciclo contínuo de consumo, reconexão e gravação, diferente do ciclo de requisição da interface. Essa divisão evita decompor cada função de tela em um serviço próprio.
 
 O coletor assina `fazenda/grupo2/#`, valida esquema, sensor e timestamp, registra eventos tardios com a hora do evento e usa `(tópico, sensor, timestamp)` como chave idempotente. A proposta é gravar novas leituras aceitas em MongoDB e atualizar o estado recente em Redis. QoS 1, reconexão com backoff e confirmação somente após persistência reduzem perda; deduplicação cobre reentrega. A política de retenção, armazenamento de payload inválido e autorização de persistência devem ser confirmadas antes da implementação.
 
@@ -243,6 +245,7 @@ Credenciais entram como variáveis de ambiente no deploy pelo painel de containe
 | Maria Fernanda Passos Françoso · RA 2591262422006 | Consultas MongoDB, análise de qualidade e adaptador histórico. |
 | Lauan Alves · RA 2591262422018 | Interface e wireframes, consultas Redis/MQTT e apresentação do estado recente. |
 | Luan Martinhão · RA 2591262422017 | Containers, MinIO, deploy e documentação de operação/evidências. |
+| Simplicio José · RA 2591262422020 | Validação integrada das consultas, indicadores de qualidade e evidências de validação/demonstração para a P2. |
 
 Essa distribuição é o plano de trabalho sugerido para a equipe e deve ser validada pelo grupo antes da implementação. A arquitetura editável está em `arquitetura/proposta.mmd`; a decisão e suas consequências estão em `../decisoes/ADR-001-arquitetura.md`.
 
