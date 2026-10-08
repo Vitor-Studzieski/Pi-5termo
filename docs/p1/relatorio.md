@@ -2,7 +2,7 @@
 
 **Grupo 2 · Cooperativa Alta Paulista · Fazenda Boa Vista · Garça/SP**
 **Projeto Integrador de Arquiteturas Cloud para Big Data · Semestre 2026.2**
-**Versão de trabalho em 07/10/2026**
+**Relatório de entrega · resultados observados em 07/10/2026**
 
 **Integrantes**
 
@@ -14,7 +14,7 @@
 
 **Repositório:** [Pi-5termo](https://github.com/Vitor-Studzieski/Pi-5termo)
 
-> **Pendências para liberar a entrega:** resultados com data/hora das consultas Q01-Q06 nos serviços reais do Grupo 2; contagens de qualidade da consulta Q07; confirmação da porta pública atribuída ao grupo e validação da divisão de tarefas pela equipe. Este documento não preenche contagens nem defeitos por estimativa.
+> As consultas Q01-Q07 foram executadas em modo somente leitura nos serviços do Grupo 2, entre 22:23 e 22:27 de 07/10/2026 (America/Sao_Paulo). As mensagens observadas por MQTT ocorreram entre 22:24:16 e 22:24:38, dentro do limite de captura de 30 segundos. O estado Redis e as mensagens MQTT são transitórios; os resultados representam o instante da coleta.
 
 ## 1. Grupo e fazenda
 
@@ -35,21 +35,21 @@ O projeto propõe um painel web para apoiar o gerente da Fazenda Boa Vista no ac
 
 ## 2. Estudo dos dados
 
-O sistema distribui os dados por finalidade: MariaDB mantém cadastros e transações; MongoDB, leituras históricas e documentos de telemetria; Redis, o estado recente; MQTT, mensagens ao vivo; MinIO, arquivos. A página da disciplina publica, para o Grupo 2, 81.155 leituras de sensores, 9.200 pontos de GPS e 506 linhas SQL como referências de consistência. São números publicados, não resultados das consultas do grupo. O histórico publicado termina em 29/09/2026; eventos posteriores recebidos por MQTT não são automaticamente incorporados ao MongoDB.
+O sistema distribui os dados por finalidade: MariaDB mantém cadastros e transações; MongoDB, leituras históricas e documentos de telemetria; Redis, o estado recente; MQTT, mensagens ao vivo; MinIO, arquivos. A coleta do Grupo 2 confirmou 81.155 leituras de sensores, 9.200 pontos de GPS e 506 linhas SQL. O histórico de sensores termina em 29/09/2026; eventos posteriores recebidos por MQTT não são automaticamente incorporados ao MongoDB.
 
 | Serviço e escopo | O que guarda | Quantidade/período observado | Perguntas de negócio |
 |---|---|---|---|
-| MariaDB `grupo2` | Fazenda, talhões, culturas, safras, sensores, máquinas, funcionários, insumos, operações, estoque, clientes e vendas | PENDENTE Q01/Q02. Informar contagem por tabela e menor/maior data disponível. | Qual talhão/safra concentra custo? Qual foi a produtividade registrada? Como estoque e venda se relacionam às operações e safras? |
-| MongoDB `grupo2.leituras` | Leituras por sensor, timestamp UTC, campos variáveis em `valores`, bateria e firmware | PENDENTE Q03. Período a partir de `ts`; referência publicada: 81.155 leituras no grupo. | Como umidade e condições meteorológicas variam por talhão e dia? Há lacunas ou anomalias? |
-| MongoDB `telemetria_maquinas` | Pontos de GPS e estado de máquina ligados a `operacao_id` | PENDENTE Q03. Referência publicada: 9.200 pontos de GPS. | Onde a máquina operou e a telemetria pode ser associada a uma operação? |
-| MongoDB `alertas` e `imagens` | Eventos de alerta e catálogo NDVI com talhão, data, média NDVI, nuvem e chave do objeto | PENDENTE Q03. | Quais eventos requerem atenção? Qual mapa corresponde ao talhão e data escolhidos? |
-| Redis `grupo2:*` | Último valor por sensor, stream curto de leituras, 50 alertas recentes, ranking de produtividade e resumos | PENDENTE Q04. Estado transitório no momento da consulta. | Qual é a leitura mais recente? Quais alertas e talhões aparecem no estado atual? |
-| MQTT `fazenda/grupo2/#` | Publicações ao vivo de sensores, máquinas, alertas e status | PENDENTE Q05. Registrar janela, instante e quantidade recebida na amostra. | O que está sendo publicado agora? Algum sensor ou máquina está online? |
-| MinIO bucket `grupo2` | Imagens NDVI por talhão/data e laudo CSV de solo | PENDENTE Q06. Registrar objetos, bytes e datas. | Qual imagem ou resultado de solo pode ser consultado para um talhão? |
+| MariaDB `grupo2` | Fazenda, talhões, culturas, safras, sensores, máquinas, funcionários, insumos, operações, estoque, clientes e vendas | 506 linhas em 12 tabelas (Q01). As 121 operações cobrem 07/12/2022 a 26/09/2026; vendas, 07/07/2023 a 23/09/2026. | Qual talhão/safra concentra custo? Qual foi a produtividade registrada? Como estoque e venda se relacionam às operações e safras? |
+| MongoDB `grupo2.leituras` | Leituras por sensor, timestamp UTC, campos variáveis em `valores`, bateria e firmware | 81.155 documentos, de 01/06/2026 00:00 a 29/09/2026 23:45 UTC (Q03). | Como umidade e condições meteorológicas variam por talhão e dia? Há lacunas ou anomalias? |
+| MongoDB `telemetria_maquinas` | Pontos de GPS e estado de máquina ligados a `operacao_id` | 9.200 documentos, de 08/06/2026 10:00 a 26/09/2026 13:18 UTC. Os 10 IDs de operação distintos existem no MariaDB. | Onde a máquina operou e a telemetria pode ser associada a uma operação? |
+| MongoDB `alertas` e `imagens` | Eventos de alerta e catálogo NDVI com talhão, data, média NDVI, nuvem e chave do objeto | 175 alertas (27/06 a 17/09 UTC) e 48 imagens (05/06 a 25/09 UTC). | Quais eventos requerem atenção? Qual mapa corresponde ao talhão e data escolhidos? |
+| Redis `grupo2:*` | Último valor por sensor, stream curto de leituras, alertas recentes, ranking de produtividade e resumos | 19 chaves: stream com 5.005 entradas (07/10, 10:33-22:27 BRT), lista com 17 alertas e ranking com 6 talhões (Q04). | Qual é a leitura mais recente? Quais alertas e talhões aparecem no estado atual? |
+| MQTT `fazenda/grupo2/#` | Publicações ao vivo de sensores, máquinas, alertas e status | 9 mensagens na captura de até 30 s; mensagens entre 22:24:16 e 22:24:38 BRT: uma de cada um dos 7 sensores e 2 de status. | O que está sendo publicado agora? Algum sensor ou máquina está online? |
+| MinIO bucket `grupo2` | Imagens NDVI por talhão/data e laudo CSV de solo | 49 objetos (48 PNG e 1 CSV), 3.281.590 bytes no total (Q06). | Qual imagem ou resultado de solo pode ser consultado para um talhão? |
 
 ### Consultas e resultados
 
-Todas as contagens a seguir ainda precisam ser executadas nos serviços do Grupo 2. As fontes de consulta estão versionadas em `docs/p1/consultas/`. Preencher o resultado com unidade, janela e horário de São Paulo depois da execução.
+As fontes de consulta estão versionadas em `docs/p1/consultas/`. Os resultados abaixo foram coletados nos serviços do Grupo 2; valores monetários seguem a unidade da coluna `custo_total` no banco. Datas MongoDB foram registradas em UTC e as amostras ao vivo em `America/Sao_Paulo`.
 
 **Q01 - MariaDB, linhas por tabela** (`mariadb-q01-inventario.sql`):
 
@@ -68,6 +68,8 @@ UNION ALL SELECT 'cliente', COUNT(*) FROM cliente
 UNION ALL SELECT 'venda', COUNT(*) FROM venda;
 ```
 
+**Resultado Q01 (07/10/2026):** `fazenda` 1; `talhao` 6; `cultura` 5; `safra` 30; `sensor` 7; `maquina` 5; `funcionario` 10; `insumo` 13; `operacao` 121; `estoque_movimento` 258; `cliente` 6; `venda` 44. **Total: 506 linhas.**
+
 **Q02 - MariaDB, custo e produtividade** (`mariadb-q02-operacoes.sql`):
 
 ```sql
@@ -76,40 +78,48 @@ SELECT tipo, COUNT(*) AS quantidade,
 FROM operacao GROUP BY tipo ORDER BY custo_total DESC;
 ```
 
+Para cruzar o resultado agrícola na safra colhida 2025/26, Q02b consulta a produtividade registrada por talhão:
+
+```sql
+SELECT t.codigo AS talhao, c.nome AS cultura, s.produtividade_kg_ha
+FROM safra s
+JOIN talhao t ON t.id = s.talhao_id
+JOIN cultura c ON c.id = s.cultura_id
+WHERE s.ano_safra = '2025/26' AND s.status = 'colhida'
+ORDER BY s.produtividade_kg_ha DESC;
+```
+
+**Resultado Q02 (07/10/2026):** adubação, 24 operações e 1.320.963,23; pulverização, 73 e 360.862,96; colheita, 24 e 167.489,59. Produtividade 2025/26 em kg/ha: T02 1.976,0; T01 1.774,9; T04 1.774,0; T06 1.586,6; T05 1.482,1; T03 1.476,5.
+
 **Q03 - MongoDB, contagem e cobertura histórica** (`mongodb-q03-inventario.js`):
 
 ```javascript
 for (const nome of ["leituras", "telemetria_maquinas", "alertas", "imagens"]) {
   const c = db.getCollection(nome);
+  const campoData = nome === "imagens" ? "data" : "ts";
   printjson({colecao: nome, documentos: c.countDocuments({}),
+    campo_data: campoData,
     cobertura_utc: c.aggregate([{$group: {_id: null,
-      primeiro: {$min: "$ts"}, ultimo: {$max: "$ts"}}}]).toArray()});
+      primeiro: {$min: `$${campoData}`}, ultimo: {$max: `$${campoData}`}}}]).toArray()});
 }
 ```
 
-**Q04 - Redis, chaves e janela recente** (`redis-q04-estado.txt`):
-
-```text
-SCAN 0 MATCH grupo2:* COUNT 100
-HGETALL grupo2:sensor:SS-01
-XREVRANGE grupo2:stream:leituras + - COUNT 5
-LRANGE grupo2:alertas:recentes 0 9
-ZREVRANGE grupo2:ranking:produtividade:2025-26 0 -1 WITHSCORES
-```
-
-**Q05 - MQTT, amostra ao vivo** (`mqtt-q05-amostra.sh`):
+**Q04 - Redis, chaves e janela recente** (`redis-q04-estado.py`):
 
 ```sh
-mosquitto_sub -h "$MQTT_HOST" -p "$MQTT_PORT" \
-  -u "$MQTT_USERNAME" -P "$MQTT_PASSWORD" \
-  -t 'fazenda/grupo2/#' -v -C 20 -W 30
+python3 docs/p1/consultas/redis-q04-estado.py
+```
+
+**Q05 - MQTT, amostra ao vivo** (`mqtt-q05-amostra.py`):
+
+```sh
+python3 docs/p1/consultas/mqtt-q05-amostra.py
 ```
 
 **Q06 - MinIO, objetos do bucket** (`minio-q06-inventario.py`):
 
-```python
-for obj in s3.list_objects_v2(Bucket="grupo2").get("Contents", []):
-    print(obj["Key"], obj["Size"], obj["LastModified"])
+```sh
+python3 docs/p1/consultas/minio-q06-inventario.py
 ```
 
 **Q07 - MongoDB, triagem de qualidade** (`mongodb-q07-qualidade.js`): a consulta completa mede duplicatas, lacunas, percentuais fora da faixa, sequências repetidas, distribuição por firmware e documentos fora da ordem natural. Exemplo da regra de duplicidade:
@@ -125,27 +135,27 @@ db.leituras.aggregate([
 
 | Consulta | Execução (horário de São Paulo) | Resultado observado | Interpretação |
 |---|---|---|---|
-| Q01 | PENDENTE | PENDENTE | Sem execução autenticada; não inferir distribuição por tabela a partir do total agregado publicado. |
-| Q02 | PENDENTE | PENDENTE | O custo só poderá ser comparado depois de confirmar unidades, campos nulos e janela da safra. |
-| Q03 | PENDENTE | PENDENTE | Os limites UTC devem ser convertidos ao fuso local para relatórios diários. |
-| Q04 | PENDENTE | PENDENTE | Redis representa estado recente e uma janela curta, não substitui o histórico. |
-| Q05 | PENDENTE | PENDENTE | Uma amostra do broker é transitória e não mede cobertura histórica. |
-| Q06 | PENDENTE | PENDENTE | Registrar total de objetos/bytes e conferir se as chaves esperadas abrem. |
-| Q07 | PENDENTE | PENDENTE | Registrar cada defeito separadamente; limiares de lacuna e repetição são critérios de triagem. |
+| Q01 | 07/10/2026, 22:23-22:27 | 506 linhas em 12 tabelas; `estoque_movimento` tem 258 e `operacao`, 121. | O inventário relacional observado coincide com as 506 linhas totais publicadas para o grupo; a distribuição por tabela foi medida diretamente. |
+| Q02 | 07/10/2026, 22:23-22:27 | 121 operações, custo acumulado 1.849.315,78; adubação 1.320.963,23, pulverização 360.862,96 e colheita 167.489,59. Produtividade 2025/26: 1.476,5-1.976,0 kg/ha. | Adubação responde pela maior parcela do custo registrado. T02 teve maior produtividade e T03 a menor; o resultado é histórico e não mede a safra em curso. |
+| Q03 | 07/10/2026, 22:23-22:27 | 81.155 leituras, 9.200 pontos de telemetria, 175 alertas e 48 imagens. Leituras: 01/06-29/09 UTC. | O histórico de sensores termina em 29/09/2026; a coleção `imagens` usa o campo `data`, não `ts`. |
+| Q04 | 07/10/2026, 22:23-22:27 | 19 chaves; 14 hashes, 1 lista, 1 stream, 2 strings e 1 conjunto ordenado. Stream: 5.005 entradas; contador histórico 81.155 e ao vivo 77.623. | Redis serve a janela recente: o stream cobre 10:33:20-22:27:38 BRT e mantém cerca de 5 mil entradas, enquanto os contadores são acumulados. |
+| Q05 | 07/10/2026, captura de até 30 s; mensagens entre 22:24:16-22:24:38 | 9 mensagens recebidas; 7 tópicos de sensores e 2 de status. Payloads não foram gravados. | Confirma atividade ao vivo durante a amostra; não representa taxa ou cobertura do histórico completo. |
+| Q06 | 07/10/2026, 22:23-22:27 | 49 objetos e 3.281.590 bytes: 48 imagens NDVI e um laudo CSV. Objetos modificados em 30/09/2026, por volta de 05:34:51 BRT. | Há oito imagens por talhão em seis talhões e um arquivo de laudo; o catálogo MongoDB referencia as chaves NDVI. |
+| Q07 | 07/10/2026, 22:23-22:27 | 323 chaves duplicadas (323 linhas excedentes), 11 leituras inválidas, 480 slots estimados sem leitura em SS-04 e 89 posições repetidas em sequências longas de SS-03. | Defeitos foram medidos sem alterar os dados. Os limiares de 15 min e 8 repetições são triagem; a ordem natural do Mongo é apenas um indicador físico. |
 
 ## 3. Qualidade dos dados
 
-A documentação do conjunto informa que foram incluídos exemplos de duplicatas, intervalos sem leitura, valores impossíveis, sensores repetindo valores, alterações de unidade após mudança de firmware e documentos fora da ordem temporal. A documentação não localiza os casos em cada fazenda. A tabela abaixo registra como o grupo vai detectá-los e tratá-los; as quantidades da Fazenda Boa Vista são PENDENTES até executar Q07.
+A documentação do conjunto informa que foram incluídos exemplos de duplicatas, intervalos sem leitura, valores impossíveis, sensores repetindo valores, alterações de unidade após mudança de firmware e documentos fora da ordem temporal. A consulta Q07 foi executada em 07/10/2026, entre 22:23 e 22:27 BRT, e as quantidades abaixo são do Grupo 2. Os limiares são critérios de triagem, não prova isolada de defeito físico.
 
 | Problema e detecção | Quantidade afetada | Tratamento planejado |
 |---|---|---|
-| Duplicata: mesma chave lógica `(sensor, ts)` no MongoDB. Q07 agrupa a chave e conta linhas excedentes. | PENDENTE Q07 | Deduplicar idempotentemente pela chave lógica ao ingerir; não contar duplicatas em médias. Manter trilha de auditoria. |
-| Lacuna: intervalo entre duas leituras do mesmo sensor acima da cadência nominal histórica de 15 min. Q07 ordena por `ts` UTC e estima slots ausentes. | PENDENTE Q07 | Mostrar lacuna e intervalo sem dado; não interpolar silenciosamente. |
-| Percentual impossível: umidade percentual ou bateria menor que 0 ou maior que 100. Q07 filtra os campos. | PENDENTE Q07 | Excluir da agregação e dos alertas numéricos; preservar o valor bruto com indicador de qualidade. |
-| Sensor possivelmente travado: oito ou mais valores consecutivos iguais no mesmo sensor. Q07 faz triagem com base na cadência de 15 min. | PENDENTE Q07 | Sinalizar para análise; confirmar com status e firmware antes de excluir. O limiar é triagem, não prova de defeito. |
-| Unidade/firmware: distribuição de versão e escala dos valores por sensor/período. Q03/Q07 comparam firmware e campos numéricos. | PENDENTE Q03/Q07 | Converter para unidade canônica somente após confirmar a mudança; guardar unidade original e regra de conversão. |
-| Ordem de chegada distinta da ordem do evento: comparar sequência natural e `ts`. | PENDENTE Q07 | Ordenar por hora do evento, aceitar atrasos e tornar a gravação idempotente. |
-| Telemetria sem operação associada: comparar `operacao_id` MongoDB com `operacao.id` MariaDB. | PENDENTE após consultas | Exibir com aviso e deixar fora de métricas por operação até revisar a referência. |
+| Duplicata: mesma chave lógica `(sensor, ts)` no MongoDB. Q07 agrupa a chave e conta linhas excedentes. | 323 chaves duplicadas, 323 linhas excedentes. | Deduplicar idempotentemente pela chave lógica ao ingerir; não contar duplicatas em médias. Manter trilha de auditoria. |
+| Lacuna: intervalo entre duas leituras do mesmo sensor acima da cadência nominal histórica de 15 min. Q07 ordena por `ts` UTC e estima slots ausentes. | 480 slots ausentes estimados em SS-04. | Mostrar lacuna e intervalo sem dado; não interpolar silenciosamente. |
+| Percentual impossível: umidade percentual ou bateria menor que 0 ou maior que 100. Q07 filtra os campos. | 11 leituras fora de `[0,100]` (0,0135% de 81.155), todas em SS-06; umidade a 10 cm varia de -1 a 999 nesses registros. | Excluir da agregação e dos alertas numéricos; preservar o valor bruto com indicador de qualidade. |
+| Sensor possivelmente travado: oito ou mais valores consecutivos iguais no mesmo sensor. Q07 faz triagem com base na cadência de 15 min. | 89 posições após o 7º valor de uma sequência longa, em SS-03. | Sinalizar para análise; confirmar com status e firmware antes de excluir. O limiar é triagem, não prova de defeito. |
+| Unidade/firmware: distribuição de versão e escala dos valores por sensor/período. Q03/Q07 comparam firmware e campos numéricos. | Foram observadas versões `3.2.1` e `3.3.0-beta` no EST-01; `2.4.0` em SS-01/02/03/05; `5.1.3` em SS-04/06. Não foi possível confirmar mudança de unidade apenas com a escala; SS-06 concentra os 11 extremos. | Converter para unidade canônica somente após confirmar a mudança; guardar unidade original e regra de conversão. |
+| Ordem de chegada distinta da hora do evento: comparar sequência natural e `ts`. | 40.592 recuos de timestamp ao percorrer a ordem natural do Mongo, somados nos sensores; a consulta detalha a contagem por sensor. | Ordenar gráficos por hora do evento (`ts`), aceitar atrasos e tornar a gravação idempotente. A ordem natural é volátil e não prova sozinha atraso na rede. |
+| Telemetria sem operação associada: comparar `operacao_id` MongoDB com `operacao.id` MariaDB. | 9.200 pontos, 10 IDs distintos; todos os 10 existem entre as 121 operações e nenhum ponto está sem `operacao_id`. | Exibir vínculo pela operação; sinalizar referências não encontradas caso apareçam em novas ingestões. |
 
 Os limiares de triagem serão revistos com o cadastro e o firmware do sensor. O sistema manterá visível a diferença entre “sem leitura” e “leitura válida sem alteração”. Nenhuma limpeza será aplicada diretamente ao conjunto compartilhado da disciplina.
 
@@ -219,7 +229,7 @@ O coletor assina `fazenda/grupo2/#`, valida esquema, sensor e timestamp, registr
 
 | Container | Função | Rede/porta planejada |
 |---|---|---|
-| `web` | Interface e API do monólito modular; conecta aos bancos no servidor | Porta interna 8000; porta pública atribuída ao grupo: PENDENTE. Não expõe credenciais ao navegador. |
+| `web` | Interface e API do monólito modular; conecta aos bancos no servidor | Porta interna 8000; porta externa planejada 8081, dentro da faixa reservada ao grupo. Não expõe credenciais ao navegador. |
 | `mqtt-coletor` | Assina tópicos do Grupo 2, valida mensagens e persiste as novas leituras | Sem porta pública; conexões de saída ao MQTT, MongoDB e Redis. |
 | Serviços gerenciados da disciplina | MariaDB, MongoDB, Redis, MQTT e MinIO | Não recriar nem publicar containers locais desses serviços para a aplicação do grupo. |
 

@@ -1,6 +1,6 @@
 # Projeto IAL214 - Grupo 2
 
-Sistema web de acompanhamento da Fazenda Boa Vista, em Garça/SP, para apoiar a consulta de leituras de sensores, operações agrícolas, custos, alertas e imagens NDVI. O recorte funcional será confirmado pelo grupo depois da validação das consultas aos cinco serviços.
+Sistema web planejado para acompanhar a Fazenda Boa Vista, em Garça/SP, com consultas de leituras de sensores, operações agrícolas, custos, alertas e imagens NDVI. O escopo e as fontes foram delimitados pelas consultas dos serviços do Grupo 2.
 
 ## Grupo
 
@@ -26,6 +26,7 @@ A P1 planeja o sistema e documenta o estudo dos dados. O sistema ainda não est�
 
 ## Documentacao
 
+- [PDF da P1](docs/p1/P1_IAL214_Grupo2.pdf)
 - [Relatorio P1 editavel](docs/p1/relatorio.md)
 - [Inventario de dados e consultas](docs/p1/inventario-dados.md)
 - [Qualidade dos dados](docs/p1/qualidade-dados.md)
@@ -37,8 +38,8 @@ A P1 planeja o sistema e documenta o estudo dos dados. O sistema ainda não est�
 
 ## Acessos e seguranca
 
-Copie `.env.example` para `.env` e preencha localmente com a folha de acessos do Grupo 2. O `.env` é ignorado pelo Git. Nunca coloque senhas, tokens, URIs autenticadas ou a folha de acessos no repositório. As consultas listadas em `docs/p1/consultas/` são somente de leitura.
+Configure `.env` localmente com os acessos do Grupo 2; o arquivo é ignorado pelo Git. Nunca coloque senhas, tokens, URIs autenticadas ou a folha de acessos no repositório. As consultas em `docs/p1/consultas/` leem apenas o escopo do Grupo 2. Os scripts Q04-Q06 em Python carregam `.env` sem imprimir credenciais ou payloads.
 
 ## Estado da entrega
 
-O PDF em `docs/p1/P1_IAL214_Grupo2.pdf` é uma versão de trabalho até que o grupo execute as consultas nos serviços e confirme a divisão de tarefas e a porta pública. Resultados sem execução real não devem ser preenchidos por estimativa.
+O PDF da P1 registra resultados reais coletados em 07/10/2026. A porta externa 8081 está planejada dentro da faixa reservada ao grupo; a aplicação ainda não está implementada, pois a P1 entrega o estudo, o escopo e o plano para a P2.

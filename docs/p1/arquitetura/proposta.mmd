@@ -1,5 +1,5 @@
 flowchart LR
-    U["Gerente da fazenda"] --> WEB["Container web\nmonolito modular\nporta interna 8000"]
+    U["Gerente da fazenda"] --> WEB["Container web\nmonolito modular\ninterno 8000 / externo 8081"]
     WEB -->|"cadastros e custos"| MDB[("MariaDB grupo2")]
     WEB -->|"historico e alertas"| MGO[("MongoDB grupo2")]
     WEB -->|"estado recente"| REDIS[("Redis grupo2:*")]

@@ -103,7 +103,7 @@ def proposed_architecture():
     d.add(String(10, 187, "ARQUITETURA PROPOSTA PARA A P2", fontName="Helvetica-Bold",
                  fontSize=9, fillColor=NAVY))
     box(d, 10, 145, 84, 40, "Gerente", "navegador", SAGE)
-    box(d, 126, 145, 130, 40, "Container web", "monolito modular · :8000", SAGE)
+    box(d, 126, 145, 130, 40, "Container web", "interno :8000 · externo :8081", SAGE)
     box(d, 370, 153, 138, 34, "MariaDB", "cadastros e custos")
     box(d, 370, 109, 138, 34, "MongoDB", "historico e alertas")
     box(d, 370, 65, 138, 34, "Redis", "estado recente")
@@ -123,7 +123,7 @@ def proposed_architecture():
     d.add(Polygon([362,112,355,108,360,106], fillColor=GOLD, strokeColor=GOLD))
     d.add(Line(344, 16, 362, 80, strokeColor=GOLD, strokeWidth=1.4))
     d.add(Polygon([362,80,355,77,360,74], fillColor=GOLD, strokeColor=GOLD))
-    d.add(String(354, 8, "Porta publica do grupo: confirmar. Coletor sem porta publica.",
+    d.add(String(354, 8, "Porta externa planejada: 8081. Coletor sem porta publica.",
                  fontName="Helvetica-Oblique", fontSize=6.5, fillColor=MUTED))
     return d
 
@@ -426,6 +426,9 @@ def parse_report(assets, styles, page_width):
             # First numbered section starts after the title metadata on cover.
             if re.match(r"^[1-6]\. ", heading) and not any(isinstance(x, PageBreak) for x in story):
                 story.append(PageBreak())
+            elif heading.startswith("3. Qualidade dos dados"):
+                # Keep the multi-row quality findings table together from its heading.
+                story.append(PageBreak())
             story.append(Paragraph(inline_markup(heading), styles["H1x"]))
             continue
         if line.startswith("### "):
@@ -456,7 +459,7 @@ def page_decoration(canvas, doc):
         canvas.setFont("Helvetica", 7)
         canvas.setFillColor(MUTED)
         canvas.drawString(.68*inch, height-.38*inch, "IAL214  |  Grupo 2  |  Fazenda Boa Vista")
-        canvas.drawRightString(width-.68*inch, .38*inch, f"Versao de trabalho  |  {page}")
+        canvas.drawRightString(width-.68*inch, .38*inch, f"Entrega P1  |  07/10/2026  |  {page}")
     canvas.restoreState()
 
 

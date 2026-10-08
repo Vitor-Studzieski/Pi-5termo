@@ -4,10 +4,12 @@ const nomes = ["leituras", "telemetria_maquinas", "alertas", "imagens"];
 for (const nome of nomes) {
   const c = db.getCollection(nome);
   const total = c.countDocuments({});
+  // As imagens usam `data`; as outras colecoes usam `ts`.
+  const campoData = nome === "imagens" ? "data" : "ts";
   const cobertura = c.aggregate([
-    { $group: { _id: null, primeiro: { $min: "$ts" }, ultimo: { $max: "$ts" } } }
+    { $group: { _id: null, primeiro: { $min: `$${campoData}` }, ultimo: { $max: `$${campoData}` } } }
   ]).toArray();
-  printjson({ colecao: nome, documentos: total, cobertura_ts_utc: cobertura[0] || null });
+  printjson({ colecao: nome, documentos: total, campo_data: campoData, cobertura_utc: cobertura[0] || null });
 }
 
 // Distribuicao de leituras por sensor e firmware.
